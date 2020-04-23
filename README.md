@@ -1,5 +1,10 @@
-# MERN Shopping List App
+### A Quarentine Shopping List Web App
 
-- Quarenteam Shopping List App
+_Special thanks to @ [bradtraversy](https://github.com/bradtraversy) for the tutorials_
 
-## Special thanks to @ bradtraversy for the tutorials
+#### This is a full stack web app using:
+
+- MondoDB
+- Express
+- React
+- NodeJS
