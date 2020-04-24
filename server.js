@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 
-const items = require("./routes/api/items");
 const app = express();
 
 // bodyparser middlewhar
@@ -16,13 +15,18 @@ const db = require("./config/keys").mongoURI;
 //connect to mongo
 
 mongoose
-  .connect(db)
+  .connect(db, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("mogodb connected"))
   .catch((err) => console.log(err));
 
 // use routes
 
-app.use("/api/items", items);
+app.use("/api/items", require("./routes/api/items"));
+app.use("/api/users", require("./routes/api/users"));
 
 // servestatic assets if in production
 
